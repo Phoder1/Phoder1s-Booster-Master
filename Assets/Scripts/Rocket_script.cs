@@ -24,6 +24,8 @@ public class Rocket_script : MonoBehaviour
     private float vely = 0f;
     private float velx = 0f;
     private Vector3 transformspeed;
+    enum State { Alive, Dead, Trancending };
+    State state = State.Alive;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +39,7 @@ public class Rocket_script : MonoBehaviour
     void Update()
     {
 
-        Handlecontrols();
+        if (state == State.Alive) Handlecontrols();
         if (debugon) { Debugon(); }
 
 
@@ -55,22 +57,37 @@ public class Rocket_script : MonoBehaviour
         if (collision.relativeVelocity.magnitude >= destroyforce)
         {
             collisionsound.Play();
+            state = State.Dead;
+            Invoke("Resetlevel", 1f);
         }
         else
         {
             scratchsound.volume = collision.relativeVelocity.magnitude / destroyforce;
             scratchsound.Play();
-
             switch (collision.gameObject.tag)
             {
                 case "Goal":
-
-                    Gamemanager_script.instance.Passlevel();
+                    state = State.Trancending;
+                    Invoke("Passlevel", 1f);
                     break;
 
 
             }
         }
+    }
+    private void Resetlevel()
+    {
+        Gamemanager_script.instance.Resetlevel();
+    }
+
+    private void Passlevel()
+    {
+        if (state == State.Trancending)
+        {
+            state = State.Alive;
+            Gamemanager_script.instance.Passlevel();
+        }
+
     }
     private void Handlecontrols()
     {
@@ -86,9 +103,9 @@ public class Rocket_script : MonoBehaviour
             {
                 Boostersound.Play();
             }
-            if (Boostersound.volume != 1)
+            if (Boostersound.volume != 0.7f)
             {
-                Boostersound.volume = 1;
+                Boostersound.volume = 0.7f;
             }
         }
         else
@@ -99,7 +116,7 @@ public class Rocket_script : MonoBehaviour
             }
             else
             {
-                Boostersound.volume -= 1 * Time.deltaTime;
+                Boostersound.volume -= 0.4f * Time.deltaTime;
             }
 
 

@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Gamemanager_script : MonoBehaviour
 {
+    private int currentlevel = 0;
     AudioSource backgroundmusic;
     public static Gamemanager_script instance;
     void Awake()
@@ -35,6 +37,13 @@ public class Gamemanager_script : MonoBehaviour
 
     public void Passlevel()
     {
-        print("NICE!");
+        currentlevel++;
+        SceneManager.LoadScene(currentlevel);
+
+    }
+
+    public void Resetlevel()
+    {
+        SceneManager.LoadScene(currentlevel);
     }
 }
