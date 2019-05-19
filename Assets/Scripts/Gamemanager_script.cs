@@ -5,19 +5,21 @@ using UnityEngine;
 public class Gamemanager_script : MonoBehaviour
 {
     AudioSource backgroundmusic;
-    static Gamemanager_script instance;
-    void Wake()
+    public static Gamemanager_script instance;
+    void Awake()
     {
-        if (Gamemanager_script.instance != this)
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
         {
             Destroy(gameObject);
-        }else
-        {
-            Gamemanager_script.instance = this;
         }
+        DontDestroyOnLoad(gameObject);
     }
-    // Start is called before the first frame update
-    void Start()
+        // Start is called before the first frame update
+        void Start()
     {
         backgroundmusic = GetComponent<AudioSource>();
         backgroundmusic.Play();
@@ -29,5 +31,10 @@ public class Gamemanager_script : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void Passlevel()
+    {
+        print("NICE!");
     }
 }

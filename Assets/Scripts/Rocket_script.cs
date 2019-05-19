@@ -46,15 +46,23 @@ public class Rocket_script : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Obstacle")
+        if (collision.relativeVelocity.magnitude >= destroyforce)
         {
-            if (collision.relativeVelocity.magnitude >= destroyforce)
+            collisionsound.Play();
+        }
+        else
+        {
+            scratchsound.volume = collision.relativeVelocity.magnitude / destroyforce;
+            scratchsound.Play();
+
+            switch (collision.gameObject.tag)
             {
-                collisionsound.Play();
-            }else
-            {
-                scratchsound.volume = collision.relativeVelocity.magnitude / destroyforce;
-                scratchsound.Play();
+                case "Goal":
+
+                    Gamemanager_script.instance.Passlevel();
+                    break;
+
+
             }
         }
     }
