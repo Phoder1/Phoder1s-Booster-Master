@@ -14,25 +14,24 @@ public class Wings_script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        transform.localEulerAngles = Vector3.forward * Mathf.Clamp(transform.localEulerAngles.z, 300f, 359.9f) + Vector3.up* transform.localEulerAngles.y;
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            Rocket_script.instance.Slowmode(transform.localEulerAngles.z);
-            if (transform.localEulerAngles.z > 300f || transform.localEulerAngles.z == 0f)
+
+            if (transform.localEulerAngles.z > 300f)
             {
 
                 transform.Rotate(-Vector3.forward * 45f * (Time.deltaTime / opentime), Space.Self);
-            }else
-            {
-                transform.localEulerAngles = Vector3.forward * 300f + Vector3.up * transform.localEulerAngles.y;
             }
+            Rocket_script.instance.Slowmode(transform.localEulerAngles.z);
         }
-        else if (transform.localEulerAngles.z < 360f && transform.localEulerAngles.z > 250f)
+        else if (transform.localEulerAngles.z <= 358f)
         {
             transform.Rotate(Vector3.forward * 45f * (Time.deltaTime / opentime), Space.Self);
         }
         else
         {
-            transform.localEulerAngles = Vector3.forward * 0f + Vector3.up * transform.localEulerAngles.y;
+            transform.localEulerAngles = Vector3.forward * 359f + Vector3.up * transform.localEulerAngles.y;
         }
 
     }

@@ -12,14 +12,15 @@ public class Rocket_script : MonoBehaviour
     [SerializeField] float thrustpressforce;
     [SerializeField] float rotationsens = 2f;
 
+    [SerializeField] GameObject destroyedship;
+
     [SerializeField] AudioSource Boostersound;
-    [SerializeField] AudioSource collisionsound;
     [SerializeField] AudioSource scratchsound;
     [SerializeField] AudioSource finishsound;
 
-    [SerializeField] ParticleSystem jeteffect;
+    [SerializeField] ParticleSystem jeteffectL;
+    [SerializeField] ParticleSystem jeteffectR;
     [SerializeField] ParticleSystem finisheffect;
-    [SerializeField] ParticleSystem deatheffect;
 
     private float rotationspeed = 0f;
     private float slowforce = 0f;
@@ -32,6 +33,9 @@ public class Rocket_script : MonoBehaviour
     private Vector3 transformspeed;
     enum State { Alive, Dead, Trancending };
     State state = State.Alive;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -62,9 +66,13 @@ public class Rocket_script : MonoBehaviour
     {
         if (collision.relativeVelocity.magnitude >= destroyforce)
         {
-            collisionsound.Play();
-            state = State.Dead;
-            Invoke("Resetlevel", 1f);
+            if(state == State.Alive)
+            {
+                Instantiate(destroyedship, transform.position, transform.rotation);
+                Destroy(gameObject);
+                state = State.Dead;
+            }
+
         }
         else
         {
@@ -73,26 +81,27 @@ public class Rocket_script : MonoBehaviour
             switch (collision.gameObject.tag)
             {
                 case "Goal":
-                    state = State.Trancending;
-                    Invoke("Passlevel", 1f);
-                    if (!finishsound.isPlaying && state == State.Trancending) finishsound.Play();
+
+                    if (!finishsound.isPlaying && state == State.Alive)
+                    {
+                        Invoke("Passlevel", 1f);
+                        finishsound.Play();
+                        finisheffect.Play();
+                        state = State.Trancending;
+                    }
                     break;
 
 
             }
         }
     }
-    private void Resetlevel()
-    {
-        Gamemanager_script.instance.Resetlevel();
-    }
+
 
     private void Passlevel()
     {
         if (state == State.Trancending)
         {
             Gamemanager_script.instance.Passlevel();
-            state = State.Alive;
         }
 
     }
@@ -105,6 +114,8 @@ public class Rocket_script : MonoBehaviour
 
         if (Input.GetButton("Jump"))
         {
+            jeteffectL.Play();
+            jeteffectR.Play();
             rb.AddForce(rb.mass * transform.up * thrustforce * Time.deltaTime * (Convert.ToInt32(Input.GetButtonDown("Jump")) * (thrustpressforce - 1) + 1));
             if (!Boostersound.isPlaying)
             {
@@ -117,6 +128,8 @@ public class Rocket_script : MonoBehaviour
         }
         else
         {
+            jeteffectL.Stop();
+            jeteffectR.Stop();
             if (Boostersound.volume <= 0.01)
             {
                 Boostersound.Stop();
