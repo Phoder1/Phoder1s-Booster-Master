@@ -262,11 +262,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugon: 0
-  rotationfriction: 65
+  rotationfriction: 85
   destroyforce: 10
-  thrustforce: 1400
-  thrustpressforce: 8
-  rotationsens: 11
+  thrustforce: 1500
+  thrustpressforce: 7
+  rotationsens: 9
   destroyedship: {fileID: 4971776358212802912, guid: 689c45c9e22cf9746903a778411d31d2,
     type: 3}
   Boostersound: {fileID: 8555014561901794534}
@@ -1927,11 +1927,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wing
       objectReference: {fileID: 0}
-    - target: {fileID: 8814894567455680377, guid: d75e840131024864e8fc0ee04d124366,
-        type: 3}
-      propertyPath: opentime
-      value: 0.8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d75e840131024864e8fc0ee04d124366, type: 3}
 --- !u!4 &8215028608584278930 stripped
@@ -2011,6 +2006,22 @@ PrefabInstance:
       propertyPath: ShapeModule.radius.value
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 198100719057022332, guid: a3553fd250eb92d4091bebde350c6739,
+        type: 3}
+      propertyPath: LightsModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198100719057022332, guid: a3553fd250eb92d4091bebde350c6739,
+        type: 3}
+      propertyPath: LightsModule.ratio
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198100719057022332, guid: a3553fd250eb92d4091bebde350c6739,
+        type: 3}
+      propertyPath: LightsModule.light
+      value: 
+      objectReference: {fileID: 6991632718932074529, guid: f028209e21634a449a0ffd93ec1e9ce7,
+        type: 3}
     - target: {fileID: 1113205305641416, guid: a3553fd250eb92d4091bebde350c6739, type: 3}
       propertyPath: m_Name
       value: Rocket Jet Particles Right
@@ -2100,6 +2111,22 @@ PrefabInstance:
       propertyPath: ShapeModule.radius.value
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 198100719057022332, guid: a3553fd250eb92d4091bebde350c6739,
+        type: 3}
+      propertyPath: LightsModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198100719057022332, guid: a3553fd250eb92d4091bebde350c6739,
+        type: 3}
+      propertyPath: LightsModule.ratio
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198100719057022332, guid: a3553fd250eb92d4091bebde350c6739,
+        type: 3}
+      propertyPath: LightsModule.light
+      value: 
+      objectReference: {fileID: 6991632718932074529, guid: f028209e21634a449a0ffd93ec1e9ce7,
+        type: 3}
     - target: {fileID: 1113205305641416, guid: a3553fd250eb92d4091bebde350c6739, type: 3}
       propertyPath: m_Name
       value: Rocket Jet Particles Left
