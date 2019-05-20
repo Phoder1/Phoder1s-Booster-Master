@@ -7,7 +7,9 @@ public class Gamemanager_script : MonoBehaviour
 {
     private int currentlevel = 0;
     AudioSource backgroundmusic;
+    [SerializeField] GameObject menurocket;
     public static Gamemanager_script instance;
+    Quaternion menurocketquaternion;
     void Awake()
     {
         if (instance == null)
@@ -23,6 +25,7 @@ public class Gamemanager_script : MonoBehaviour
         // Start is called before the first frame update
         void Start()
     {
+        menurocketquaternion = Quaternion.Euler(0f, 0f, 30.643f);
         backgroundmusic = GetComponent<AudioSource>();
         backgroundmusic.Play();
         backgroundmusic.loop = true;
@@ -45,5 +48,10 @@ public class Gamemanager_script : MonoBehaviour
     public void Resetlevel()
     {
         SceneManager.LoadScene(currentlevel);
+    }
+
+    public void Restartmenu()
+    {
+        Instantiate(menurocket, new Vector3(-4.69f, 20.44f, 0f), menurocketquaternion);
     }
 }
