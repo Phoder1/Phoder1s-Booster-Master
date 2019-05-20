@@ -11,10 +11,16 @@ public class Rocket_script : MonoBehaviour
     public float thrustforce;
     [SerializeField] float thrustpressforce;
     [SerializeField] float rotationsens = 2f;
+
     [SerializeField] AudioSource Boostersound;
     [SerializeField] AudioSource collisionsound;
     [SerializeField] AudioSource scratchsound;
     [SerializeField] AudioSource finishsound;
+
+    [SerializeField] ParticleSystem jeteffect;
+    [SerializeField] ParticleSystem finisheffect;
+    [SerializeField] ParticleSystem deatheffect;
+
     private float rotationspeed = 0f;
     private float slowforce = 0f;
     [SerializeField] float maxslowspeed = 20f;
@@ -69,6 +75,7 @@ public class Rocket_script : MonoBehaviour
                 case "Goal":
                     state = State.Trancending;
                     Invoke("Passlevel", 1f);
+                    if (!finishsound.isPlaying && state == State.Trancending) finishsound.Play();
                     break;
 
 
@@ -84,8 +91,8 @@ public class Rocket_script : MonoBehaviour
     {
         if (state == State.Trancending)
         {
-            state = State.Alive;
             Gamemanager_script.instance.Passlevel();
+            state = State.Alive;
         }
 
     }
@@ -116,7 +123,7 @@ public class Rocket_script : MonoBehaviour
             }
             else
             {
-                Boostersound.volume -= 0.4f * Time.deltaTime;
+                Boostersound.volume -= 0.2f * Time.deltaTime;
             }
 
 
