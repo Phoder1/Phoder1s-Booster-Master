@@ -29,7 +29,9 @@ public class Gamemanager_script : MonoBehaviour
         backgroundmusic = GetComponent<AudioSource>();
         backgroundmusic.Play();
         backgroundmusic.loop = true;
-        
+        currentlevel = SceneManager.GetActiveScene().buildIndex;
+
+
     }
 
     // Update is called once per frame
@@ -41,6 +43,7 @@ public class Gamemanager_script : MonoBehaviour
     public void Passlevel()
     {
         currentlevel++;
+        if(SceneManager.sceneCount < currentlevel) { currentlevel = 0; }
         SceneManager.LoadScene(currentlevel);
 
     }

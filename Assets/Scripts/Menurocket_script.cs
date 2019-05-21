@@ -8,6 +8,7 @@ public class Menurocket_script : MonoBehaviour
     public float thrustforce;
 
     [SerializeField] GameObject destroyedship;
+    [SerializeField] GameObject jetparticles;
 
 
     [SerializeField] ParticleSystem jeteffectL;
@@ -24,6 +25,12 @@ public class Menurocket_script : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        jeteffectL = Instantiate(jeteffectL, transform.position + transform.right * -1f + transform.up * -0.5f, transform.rotation);
+        jeteffectL.transform.SetParent(gameObject.transform);
+        jeteffectL.Play();
+        jeteffectR = Instantiate(jeteffectR, transform.position + Vector3.right * 1f + Vector3.up * -0.5f, transform.rotation);
+        jeteffectR.transform.SetParent(gameObject.transform);
+        jeteffectR.Play();
         instance = this;
         rb = GetComponent<Rigidbody>();
         col = GetComponent<Collider>();
@@ -49,8 +56,6 @@ public class Menurocket_script : MonoBehaviour
     }
     private void Handlecontrols()
     {
-        jeteffectL.Play();
-        jeteffectR.Play();
         rb.AddForce(rb.mass * transform.up * thrustforce * Time.deltaTime);
     }
 

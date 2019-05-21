@@ -39,6 +39,10 @@ public class Rocket_script : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        jeteffectL = Instantiate(jeteffectL, transform.position + transform.right * -1f + transform.up * -0.5f, transform.rotation);
+        jeteffectL.transform.SetParent(gameObject.transform);
+        jeteffectR = Instantiate(jeteffectR, transform.position + Vector3.right * 1f + Vector3.up * -0.5f, transform.rotation);
+        jeteffectR.transform.SetParent(gameObject.transform);
         instance = this;
         rb = GetComponent<Rigidbody>();
         col = GetComponent<Collider>();
@@ -86,7 +90,7 @@ public class Rocket_script : MonoBehaviour
                     {
                         Invoke("Passlevel", 1f);
                         finishsound.Play();
-                        finisheffect.Play();
+                        finisheffect = Instantiate(finisheffect, transform.position, transform.rotation);
                         state = State.Trancending;
                     }
                     break;
@@ -114,8 +118,8 @@ public class Rocket_script : MonoBehaviour
 
         if (Input.GetButton("Jump"))
         {
-            jeteffectL.Play();
             jeteffectR.Play();
+            jeteffectL.Play();
             rb.AddForce(rb.mass * transform.up * thrustforce * Time.deltaTime * (Convert.ToInt32(Input.GetButtonDown("Jump")) * (thrustpressforce - 1) + 1));
             if (!Boostersound.isPlaying)
             {
@@ -128,8 +132,8 @@ public class Rocket_script : MonoBehaviour
         }
         else
         {
-            jeteffectL.Stop();
             jeteffectR.Stop();
+            jeteffectL.Stop();
             if (Boostersound.volume <= 0.01)
             {
                 Boostersound.Stop();

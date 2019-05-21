@@ -8,6 +8,7 @@ public class Menudestroyedship_script : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        deatheffect = Instantiate(deatheffect, transform.position, transform.rotation);
         deatheffect.Play();
         Invoke("Resetlevel", 10f);
 

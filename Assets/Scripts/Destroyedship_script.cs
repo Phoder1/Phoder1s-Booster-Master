@@ -9,8 +9,9 @@ public class Destroyedship_script : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        explosionsound.Play();
+        deatheffect = Instantiate(deatheffect, transform.position + transform.right * -1f + transform.up * -0.5f, transform.rotation);
         deatheffect.Play();
+        explosionsound.Play();
         Invoke("Resetlevel", 3f);
 
     }
