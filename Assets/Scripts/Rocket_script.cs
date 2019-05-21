@@ -150,20 +150,23 @@ public class Rocket_script : MonoBehaviour
 
     public void Slowmode(float amount)
     {
-        if (amount == 0f)
+        if(state == State.Alive)
         {
-            slowforce = 0f;
+            if (amount == 0f)
+            {
+                slowforce = 0f;
+            }
+            else
+            {
+                slowforce = (1 - Mathf.Max(((amount - 300f) / 60f), 0f));
+            }
+            transformspeed = transform.TransformVector(Vector3.up * Vector3.Dot(rb.velocity, transform.up.normalized));
+            vely = rb.velocity.y * Mathf.Pow(1f - (maxslowspeed * slowforce * Mathf.Abs(transformspeed.normalized.y)) / 100, Time.deltaTime);
+            velx = rb.velocity.x * Mathf.Pow(1f - (maxslowspeed * slowforce * Mathf.Abs(transformspeed.normalized.x)) / 100, Time.deltaTime);
+            rb.velocity = new Vector3(velx, vely, 0f);
         }
-        else
-        {
-            slowforce = (1 - Mathf.Max(((amount - 300f) / 60f), 0f));
-        }
-        transformspeed = transform.TransformVector(Vector3.up * Vector3.Dot(rb.velocity, transform.up.normalized));
-        //rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y * Mathf.Pow((1 - (slowforce * (1 - Mathf.Abs(transformspeed.normalized.y)) * maxslowspeed / 100)), Time.deltaTime), 0f ) * Mathf.Pow((1 - (slowforce * (1 - Mathf.Abs(transformspeed.normalized.y)) * maxslowspeed / 100)), Time.deltaTime);
-        vely = rb.velocity.y * Mathf.Pow(1f - (maxslowspeed * slowforce * Mathf.Abs(transformspeed.normalized.y)) / 100, Time.deltaTime);
-        velx = rb.velocity.x * Mathf.Pow(1f - (maxslowspeed * slowforce * Mathf.Abs(transformspeed.normalized.x)) / 100, Time.deltaTime);
-        rb.velocity = new Vector3(velx, vely, 0f);
     }
+
 
 }
 
