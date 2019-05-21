@@ -37,13 +37,15 @@ public class Gamemanager_script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        print("current: " + currentlevel);
+        print("count: " + SceneManager.sceneCountInBuildSettings);
         
     }
 
     public void Passlevel()
     {
         currentlevel++;
-        if(SceneManager.sceneCount < currentlevel) { currentlevel = 0; }
+        if(SceneManager.sceneCountInBuildSettings ==  currentlevel) { currentlevel = 0; }
         SceneManager.LoadScene(currentlevel);
 
     }

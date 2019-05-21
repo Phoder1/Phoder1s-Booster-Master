@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class Rocket_script : MonoBehaviour
 {
-    [SerializeField] bool debugon = false;
     [SerializeField] float rotationfriction = 0.3f;
     [SerializeField] float destroyforce = 4f;
     public float thrustforce;
@@ -39,6 +38,7 @@ public class Rocket_script : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        state = State.Alive;
         jeteffectL = Instantiate(jeteffectL, transform.position + transform.right * -1f + transform.up * -0.5f, transform.rotation);
         jeteffectL.transform.SetParent(gameObject.transform);
         jeteffectR = Instantiate(jeteffectR, transform.position + Vector3.right * 1f + Vector3.up * -0.5f, transform.rotation);
@@ -54,23 +54,24 @@ public class Rocket_script : MonoBehaviour
     {
 
         if (state == State.Alive) Handlecontrols();
-        if (debugon) { Debugon(); }
+        if (Debug.isDebugBuild && Input.GetKeyDown("l") && state == State.Alive)
+        {
+
+            Invoke("Passlevel", 2f);
+            finisheffect = Instantiate(finisheffect, transform.position, transform.rotation);
+            finishsound.Play();
+            finisheffect.Play();
+            state = State.Trancending;
+        }
 
 
-    }
-
-    private void Debugon()
-    {
-        Debug.Log("Rotation Friction :" + rotationfriction);
-        Debug.Log("Rotation Speed :" + rotationspeed);
-        Debug.Log("Rotation Sens :" + rotationsens);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.relativeVelocity.magnitude >= destroyforce)
         {
-            if(state == State.Alive)
+            if (state == State.Alive)
             {
                 Instantiate(destroyedship, transform.position, transform.rotation);
                 Destroy(gameObject);
@@ -88,9 +89,10 @@ public class Rocket_script : MonoBehaviour
 
                     if (!finishsound.isPlaying && state == State.Alive)
                     {
-                        Invoke("Passlevel", 1f);
+                        Invoke("Passlevel", 2f);
                         finishsound.Play();
                         finisheffect = Instantiate(finisheffect, transform.position, transform.rotation);
+                        finisheffect.Play();
                         state = State.Trancending;
                     }
                     break;
@@ -150,7 +152,7 @@ public class Rocket_script : MonoBehaviour
 
     public void Slowmode(float amount)
     {
-        if(state == State.Alive)
+        if (state == State.Alive)
         {
             if (amount == 0f)
             {

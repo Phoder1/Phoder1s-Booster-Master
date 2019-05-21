@@ -17,7 +17,7 @@ public class Oscillator_script : MonoBehaviour
     {
         sincurve = new AnimationCurve(new Keyframe(0, 0), new Keyframe(1, 1));
         origin = transform.position;
-        if (!global) targetpoint = origin + targetpoint;
+        if (!global) { targetpoint = transform.localPosition + transform.TransformDirection(targetpoint); }
     }
 
     // Update is called once per frame
