@@ -115,7 +115,7 @@ public class Rocket_script : MonoBehaviour
     {
 
         rotationspeed -= Input.GetAxis("Horizontal") * rotationsens * Time.deltaTime;
-        transform.Rotate(transform.forward, rotationspeed);
+        transform.Rotate(transform.forward, rotationspeed*Time.deltaTime);
         rotationspeed *= Mathf.Pow((1f - (rotationfriction / 100)), Time.deltaTime);
 
         if (Input.GetButton("Jump"))

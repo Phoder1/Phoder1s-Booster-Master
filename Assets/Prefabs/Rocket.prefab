@@ -55,6 +55,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -147,6 +148,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -262,7 +264,7 @@ MonoBehaviour:
   destroyforce: 10
   thrustforce: 1500
   thrustpressforce: 7
-  rotationsens: 6.5
+  rotationsens: 200
   destroyedship: {fileID: 4971776358212802912, guid: 689c45c9e22cf9746903a778411d31d2,
     type: 3}
   Boostersound: {fileID: 8555014561901794534}
@@ -632,6 +634,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -724,6 +727,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -816,6 +820,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -908,6 +913,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1000,6 +1006,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1093,6 +1100,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1185,6 +1193,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1320,6 +1329,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1413,6 +1423,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1571,6 +1582,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1728,6 +1740,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1821,6 +1834,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1866,6 +1880,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8629834183880805402}
     m_Modifications:
+    - target: {fileID: 8814894567455680379, guid: d75e840131024864e8fc0ee04d124366,
+        type: 3}
+      propertyPath: m_Name
+      value: Wing
+      objectReference: {fileID: 0}
     - target: {fileID: 8814894567455680376, guid: d75e840131024864e8fc0ee04d124366,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1921,11 +1940,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 359.9
       objectReference: {fileID: 0}
-    - target: {fileID: 8814894567455680379, guid: d75e840131024864e8fc0ee04d124366,
-        type: 3}
-      propertyPath: m_Name
-      value: Wing
-      objectReference: {fileID: 0}
     - target: {fileID: 8814894567455680377, guid: d75e840131024864e8fc0ee04d124366,
         type: 3}
       propertyPath: opentime
@@ -1946,6 +1960,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8629834183880805402}
     m_Modifications:
+    - target: {fileID: 8814894567455680379, guid: d75e840131024864e8fc0ee04d124366,
+        type: 3}
+      propertyPath: m_Name
+      value: Wing (4)
+      objectReference: {fileID: 0}
     - target: {fileID: 8814894567455680376, guid: d75e840131024864e8fc0ee04d124366,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2001,11 +2020,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 359.9
       objectReference: {fileID: 0}
-    - target: {fileID: 8814894567455680379, guid: d75e840131024864e8fc0ee04d124366,
-        type: 3}
-      propertyPath: m_Name
-      value: Wing (4)
-      objectReference: {fileID: 0}
     - target: {fileID: 8814894567455680377, guid: d75e840131024864e8fc0ee04d124366,
         type: 3}
       propertyPath: opentime
@@ -2026,6 +2040,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8629834183880805402}
     m_Modifications:
+    - target: {fileID: 8814894567455680379, guid: d75e840131024864e8fc0ee04d124366,
+        type: 3}
+      propertyPath: m_Name
+      value: Wing (10)
+      objectReference: {fileID: 0}
     - target: {fileID: 8814894567455680376, guid: d75e840131024864e8fc0ee04d124366,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2081,11 +2100,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 359.9
       objectReference: {fileID: 0}
-    - target: {fileID: 8814894567455680379, guid: d75e840131024864e8fc0ee04d124366,
-        type: 3}
-      propertyPath: m_Name
-      value: Wing (10)
-      objectReference: {fileID: 0}
     - target: {fileID: 8814894567455680377, guid: d75e840131024864e8fc0ee04d124366,
         type: 3}
       propertyPath: opentime
@@ -2106,6 +2120,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8629834183880805402}
     m_Modifications:
+    - target: {fileID: 8814894567455680379, guid: d75e840131024864e8fc0ee04d124366,
+        type: 3}
+      propertyPath: m_Name
+      value: Wing (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 8814894567455680376, guid: d75e840131024864e8fc0ee04d124366,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2161,11 +2180,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 359.9
       objectReference: {fileID: 0}
-    - target: {fileID: 8814894567455680379, guid: d75e840131024864e8fc0ee04d124366,
-        type: 3}
-      propertyPath: m_Name
-      value: Wing (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 8814894567455680377, guid: d75e840131024864e8fc0ee04d124366,
         type: 3}
       propertyPath: opentime
@@ -2186,6 +2200,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8629834183880805402}
     m_Modifications:
+    - target: {fileID: 8814894567455680379, guid: d75e840131024864e8fc0ee04d124366,
+        type: 3}
+      propertyPath: m_Name
+      value: Wing (7)
+      objectReference: {fileID: 0}
     - target: {fileID: 8814894567455680376, guid: d75e840131024864e8fc0ee04d124366,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2241,11 +2260,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 359.9
       objectReference: {fileID: 0}
-    - target: {fileID: 8814894567455680379, guid: d75e840131024864e8fc0ee04d124366,
-        type: 3}
-      propertyPath: m_Name
-      value: Wing (7)
-      objectReference: {fileID: 0}
     - target: {fileID: 8814894567455680377, guid: d75e840131024864e8fc0ee04d124366,
         type: 3}
       propertyPath: opentime
@@ -2266,6 +2280,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8629834183880805402}
     m_Modifications:
+    - target: {fileID: 8814894567455680379, guid: d75e840131024864e8fc0ee04d124366,
+        type: 3}
+      propertyPath: m_Name
+      value: Wing (9)
+      objectReference: {fileID: 0}
     - target: {fileID: 8814894567455680376, guid: d75e840131024864e8fc0ee04d124366,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2321,11 +2340,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 359.9
       objectReference: {fileID: 0}
-    - target: {fileID: 8814894567455680379, guid: d75e840131024864e8fc0ee04d124366,
-        type: 3}
-      propertyPath: m_Name
-      value: Wing (9)
-      objectReference: {fileID: 0}
     - target: {fileID: 8814894567455680377, guid: d75e840131024864e8fc0ee04d124366,
         type: 3}
       propertyPath: opentime
@@ -2346,6 +2360,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8629834183880805402}
     m_Modifications:
+    - target: {fileID: 8814894567455680379, guid: d75e840131024864e8fc0ee04d124366,
+        type: 3}
+      propertyPath: m_Name
+      value: Wing (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 8814894567455680376, guid: d75e840131024864e8fc0ee04d124366,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2401,11 +2420,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 359.9
       objectReference: {fileID: 0}
-    - target: {fileID: 8814894567455680379, guid: d75e840131024864e8fc0ee04d124366,
-        type: 3}
-      propertyPath: m_Name
-      value: Wing (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 8814894567455680377, guid: d75e840131024864e8fc0ee04d124366,
         type: 3}
       propertyPath: opentime
@@ -2426,6 +2440,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8629834183880805402}
     m_Modifications:
+    - target: {fileID: 8814894567455680379, guid: d75e840131024864e8fc0ee04d124366,
+        type: 3}
+      propertyPath: m_Name
+      value: Wing (11)
+      objectReference: {fileID: 0}
     - target: {fileID: 8814894567455680376, guid: d75e840131024864e8fc0ee04d124366,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2481,11 +2500,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 359.9
       objectReference: {fileID: 0}
-    - target: {fileID: 8814894567455680379, guid: d75e840131024864e8fc0ee04d124366,
-        type: 3}
-      propertyPath: m_Name
-      value: Wing (11)
-      objectReference: {fileID: 0}
     - target: {fileID: 8814894567455680377, guid: d75e840131024864e8fc0ee04d124366,
         type: 3}
       propertyPath: opentime
@@ -2506,6 +2520,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8629834183880805402}
     m_Modifications:
+    - target: {fileID: 8814894567455680379, guid: d75e840131024864e8fc0ee04d124366,
+        type: 3}
+      propertyPath: m_Name
+      value: Wing (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 8814894567455680376, guid: d75e840131024864e8fc0ee04d124366,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2561,11 +2580,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 359.9
       objectReference: {fileID: 0}
-    - target: {fileID: 8814894567455680379, guid: d75e840131024864e8fc0ee04d124366,
-        type: 3}
-      propertyPath: m_Name
-      value: Wing (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 8814894567455680377, guid: d75e840131024864e8fc0ee04d124366,
         type: 3}
       propertyPath: opentime
@@ -2586,6 +2600,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8629834183880805402}
     m_Modifications:
+    - target: {fileID: 8814894567455680379, guid: d75e840131024864e8fc0ee04d124366,
+        type: 3}
+      propertyPath: m_Name
+      value: Wing (8)
+      objectReference: {fileID: 0}
     - target: {fileID: 8814894567455680376, guid: d75e840131024864e8fc0ee04d124366,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2641,11 +2660,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 359.9
       objectReference: {fileID: 0}
-    - target: {fileID: 8814894567455680379, guid: d75e840131024864e8fc0ee04d124366,
-        type: 3}
-      propertyPath: m_Name
-      value: Wing (8)
-      objectReference: {fileID: 0}
     - target: {fileID: 8814894567455680377, guid: d75e840131024864e8fc0ee04d124366,
         type: 3}
       propertyPath: opentime
@@ -2666,6 +2680,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8629834183880805402}
     m_Modifications:
+    - target: {fileID: 8814894567455680379, guid: d75e840131024864e8fc0ee04d124366,
+        type: 3}
+      propertyPath: m_Name
+      value: Wing (6)
+      objectReference: {fileID: 0}
     - target: {fileID: 8814894567455680376, guid: d75e840131024864e8fc0ee04d124366,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2721,11 +2740,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 359.9
       objectReference: {fileID: 0}
-    - target: {fileID: 8814894567455680379, guid: d75e840131024864e8fc0ee04d124366,
-        type: 3}
-      propertyPath: m_Name
-      value: Wing (6)
-      objectReference: {fileID: 0}
     - target: {fileID: 8814894567455680377, guid: d75e840131024864e8fc0ee04d124366,
         type: 3}
       propertyPath: opentime
@@ -2746,6 +2760,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8629834183880805402}
     m_Modifications:
+    - target: {fileID: 8814894567455680379, guid: d75e840131024864e8fc0ee04d124366,
+        type: 3}
+      propertyPath: m_Name
+      value: Wing (5)
+      objectReference: {fileID: 0}
     - target: {fileID: 8814894567455680376, guid: d75e840131024864e8fc0ee04d124366,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2800,11 +2819,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 359.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 8814894567455680379, guid: d75e840131024864e8fc0ee04d124366,
-        type: 3}
-      propertyPath: m_Name
-      value: Wing (5)
       objectReference: {fileID: 0}
     - target: {fileID: 8814894567455680377, guid: d75e840131024864e8fc0ee04d124366,
         type: 3}
