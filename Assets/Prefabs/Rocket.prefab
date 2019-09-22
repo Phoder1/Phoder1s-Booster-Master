@@ -258,11 +258,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f490ae7ae627f814dad18d0fe43a15ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugon: 0
   rotationfriction: 85
   destroyforce: 10
   thrustforce: 1500
   thrustpressforce: 7
-  rotationsens: 6.5
+  rotationsens: 9
   destroyedship: {fileID: 4971776358212802912, guid: 689c45c9e22cf9746903a778411d31d2,
     type: 3}
   Boostersound: {fileID: 8555014561901794534}
@@ -274,7 +275,7 @@ MonoBehaviour:
     type: 3}
   finisheffect: {fileID: 198631066050499358, guid: 62198a3a5dbb64a4f9e1618929224faa,
     type: 3}
-  maxslowspeed: 10
+  maxslowspeed: 12
 --- !u!82 &8555014561901794534
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1926,11 +1927,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wing
       objectReference: {fileID: 0}
-    - target: {fileID: 8814894567455680377, guid: d75e840131024864e8fc0ee04d124366,
-        type: 3}
-      propertyPath: opentime
-      value: 0.4
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d75e840131024864e8fc0ee04d124366, type: 3}
 --- !u!4 &8215028608584278930 stripped
@@ -2005,11 +2001,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wing (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8814894567455680377, guid: d75e840131024864e8fc0ee04d124366,
-        type: 3}
-      propertyPath: opentime
-      value: 0.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d75e840131024864e8fc0ee04d124366, type: 3}
@@ -2086,11 +2077,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wing (10)
       objectReference: {fileID: 0}
-    - target: {fileID: 8814894567455680377, guid: d75e840131024864e8fc0ee04d124366,
-        type: 3}
-      propertyPath: opentime
-      value: 0.4
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d75e840131024864e8fc0ee04d124366, type: 3}
 --- !u!4 &600508280423176979 stripped
@@ -2165,11 +2151,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wing (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8814894567455680377, guid: d75e840131024864e8fc0ee04d124366,
-        type: 3}
-      propertyPath: opentime
-      value: 0.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d75e840131024864e8fc0ee04d124366, type: 3}
@@ -2246,11 +2227,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wing (7)
       objectReference: {fileID: 0}
-    - target: {fileID: 8814894567455680377, guid: d75e840131024864e8fc0ee04d124366,
-        type: 3}
-      propertyPath: opentime
-      value: 0.4
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d75e840131024864e8fc0ee04d124366, type: 3}
 --- !u!4 &600508279732017853 stripped
@@ -2325,11 +2301,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wing (9)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8814894567455680377, guid: d75e840131024864e8fc0ee04d124366,
-        type: 3}
-      propertyPath: opentime
-      value: 0.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d75e840131024864e8fc0ee04d124366, type: 3}
@@ -2406,11 +2377,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wing (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 8814894567455680377, guid: d75e840131024864e8fc0ee04d124366,
-        type: 3}
-      propertyPath: opentime
-      value: 0.4
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d75e840131024864e8fc0ee04d124366, type: 3}
 --- !u!4 &600508279102321337 stripped
@@ -2485,11 +2451,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wing (11)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8814894567455680377, guid: d75e840131024864e8fc0ee04d124366,
-        type: 3}
-      propertyPath: opentime
-      value: 0.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d75e840131024864e8fc0ee04d124366, type: 3}
@@ -2566,11 +2527,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wing (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 8814894567455680377, guid: d75e840131024864e8fc0ee04d124366,
-        type: 3}
-      propertyPath: opentime
-      value: 0.4
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d75e840131024864e8fc0ee04d124366, type: 3}
 --- !u!4 &600508279478555055 stripped
@@ -2645,11 +2601,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wing (8)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8814894567455680377, guid: d75e840131024864e8fc0ee04d124366,
-        type: 3}
-      propertyPath: opentime
-      value: 0.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d75e840131024864e8fc0ee04d124366, type: 3}
@@ -2726,11 +2677,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wing (6)
       objectReference: {fileID: 0}
-    - target: {fileID: 8814894567455680377, guid: d75e840131024864e8fc0ee04d124366,
-        type: 3}
-      propertyPath: opentime
-      value: 0.4
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d75e840131024864e8fc0ee04d124366, type: 3}
 --- !u!4 &600508278841492443 stripped
@@ -2805,11 +2751,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wing (5)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8814894567455680377, guid: d75e840131024864e8fc0ee04d124366,
-        type: 3}
-      propertyPath: opentime
-      value: 0.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d75e840131024864e8fc0ee04d124366, type: 3}
