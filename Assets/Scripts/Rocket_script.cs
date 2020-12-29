@@ -127,9 +127,9 @@ public class Rocket_script : MonoBehaviour
             {
                 Boostersound.Play();
             }
-            if (Boostersound.volume != 0.7f)
+            if (Boostersound.volume != 0.1f)
             {
-                Boostersound.volume = 0.7f;
+                Boostersound.volume = 0.1f;
             }
         }
         else
