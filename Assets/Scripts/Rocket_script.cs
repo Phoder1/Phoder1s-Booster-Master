@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class Rocket_script : MonoBehaviour
 {
-    [SerializeField] float rotationfriction = 0.3f;
-    [SerializeField] float destroyforce = 4f;
-    public float thrustforce;
-    [SerializeField] float thrustpressforce;
-    [SerializeField] float rotationsens = 2f;
+    [SerializeField] float rotationfriction = 85f;
+    [SerializeField] float destroyforce = 10f;
+    public float thrustforce =1500f;
+    [SerializeField] float thrustpressforce=7f;
+    [SerializeField] float rotationsens = 200f;
 
     [SerializeField] GameObject destroyedship;
 
@@ -23,7 +23,7 @@ public class Rocket_script : MonoBehaviour
 
     private float rotationspeed = 0f;
     private float slowforce = 0f;
-    [SerializeField] float maxslowspeed = 20f;
+    [SerializeField] float maxslowspeed = 10f;
     public static Rocket_script instance;
     Rigidbody rb;
     Collider col;

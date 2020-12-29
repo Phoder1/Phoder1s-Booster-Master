@@ -45,7 +45,10 @@ public class Gamemanager_script : MonoBehaviour
     public void Passlevel()
     {
         currentlevel++;
-        if(SceneManager.sceneCountInBuildSettings ==  currentlevel) { currentlevel = 0; }
+        if(SceneManager.sceneCountInBuildSettings ==  currentlevel){
+            currentlevel = 0;
+        }
+            
         SceneManager.LoadScene(currentlevel);
 
     }
